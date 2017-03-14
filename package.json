@@ -1,0 +1,19 @@
+{
+  "name": "electron-testrunner",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solsort/electron-testrunner.git"
+  },
+  "author": "RasmusErik Voel Jensen <npmjs@solsort.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/solsort/electron-testrunner/issues"
+  },
+  "homepage": "https://electron-testrunner.solsort.com/",
+  "devDependencies": {
+    "electron": "^1.6.3"
+  }
+}
