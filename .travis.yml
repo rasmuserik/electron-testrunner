@@ -1,3 +1,10 @@
 language: node_js
 node_js:
 - node
+deploy:
+  provider: npm
+  email: npmjs@solsort.com
+  api_key:
+    secure: JqEdsg5rXM1yS9q4WSAJ2kzzBzAbPfa+Kkq35KQ2MfC6Zm6yQPwWO0Av3UY/y+WEU2L1/mI+e7GAbOVZ14CRpoG+OuYB0qNtmYyfUSvXLkYIb8K1PV2YMkAAtlGawWTNyjqVvDDEx9aO0iNnEey0QHtK+oDBqfnxKMTxQUcN7OqA/ElPAtBsWiCHIxSetK5RIUDSCrjgo6QpkINjOFoJm7aj61hofLhkQAxuyV4pLo6zpNMfKVZOdnzv1UQ2OQ5gC0TSzQY3uAOgOYol7VzDtV+FVpRvr6tIfAxyNh4UU/JjFNXXk4EmXe1EgdL3p1oHkVSUtzO3TEWVOApadouNnQiajZAKM9X/V4LrHSGwE1/widd64tmqfRIMm+YWfKVIHc4I3Mw7fpKZgHHpMEq0/XBkcXL3sahYLV3knR0R/vaD9UDz81fj2K/QYAfyW7JMWy61NJ61fP98Vs7oTJRb4KXDitVesIHHhTB6DbG9MPMWr5LcJMTxnCXkb2oOgVyF3gLSuHgNzUAWk4IZrVv0NFuIOKBS16X9x3r0DtB8kSLRqg7Ms4iOc7LUjmdJ7SGSAXnnX7YweIihY6ICzMqREuQuBsijkQ9VL9d2uZ78Fs7Izzpq/XzbbPKY+DAxajceajK0o7IgWcby/Ds4jI+teB3vgqM9XodkGcragb7ZpW4=
+  on:
+    repo: solsort/electron-testrunner
