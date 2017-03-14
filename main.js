@@ -5,7 +5,7 @@ const url = require('url');
 let w;
 app.on('ready', function() {
     w = new BrowserWindow({
-//      'show': false,
+      'show': false,
       'webPreferences': {'webSecurity': false}
     });
 
