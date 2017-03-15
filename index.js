@@ -20,7 +20,6 @@
     visited.set(o, true);
 
     var keys = Object.getOwnPropertyNames(o);
-    console.log(keys.join(' '));
     keys.forEach(key => {
       traverse(o[key]);
       if(key.startsWith('TEST_')) {
@@ -32,7 +31,7 @@
     });
   }
 
-  console.log(tests.map(o => o.name).join(' '));
+  console.log('tests: ' + tests.map(o => o.name).join(' '));
   let ok = true;
   for(let i = 0; i < tests.length; ++i) {
     let test = tests[i];
