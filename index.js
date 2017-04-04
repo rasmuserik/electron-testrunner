@@ -1,34 +1,36 @@
-
 (async function() {
   let remote = require('electron').remote;
   let argv = remote.process.argv;
-  let filename = argv[argv.length - 1];
-  if(filename[0] !== '/') {
-    filename = remote.process.cwd() + '/' + filename;
-  }
-  console.log('loading file: ' + filename);
-  let module = require(filename);
-
-  let visited = new Map();
+  let filenames = argv.slice(2);
   let tests = [];
 
-  traverse(module);
-  function traverse(o) {
-    if(visited.get(o)) {
-      return;
+  for(let filename of filenames) {
+    if(filename[0] !== '/') {
+      filename = remote.process.cwd() + '/' + filename;
     }
-    visited.set(o, true);
+    console.log('loading file: ' + filename);
+    let module = require(filename);
 
-    var keys = Object.getOwnPropertyNames(o);
-    keys.forEach(key => {
-      traverse(o[key]);
-      if(key.startsWith('TEST_')) {
-        tests.push({
-          name: key,
-          fn: o[key]
-        });
+    let visited = new Map();
+
+    traverse(module);
+    function traverse(o) {
+      if(visited.get(o)) {
+        return;
       }
-    });
+      visited.set(o, true);
+
+      var keys = Object.getOwnPropertyNames(o);
+      keys.forEach(key => {
+        traverse(o[key]);
+        if(key.startsWith('TEST_')) {
+          tests.push({
+            name: key,
+            fn: o[key]
+          });
+        }
+      });
+    }
   }
 
   console.log('tests: ' + tests.map(o => o.name).join(' '));
@@ -43,6 +45,6 @@
       console.log(e);
       console.log(test.name + ' error: ' + e.toString());
     }
-    remote.process.exit(ok ? 0 : 1);
   }
+  remote.process.exit(ok ? 0 : 1);
 })();

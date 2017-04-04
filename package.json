@@ -1,8 +1,9 @@
 {
   "name": "electron-testrunner",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "main": "main.js",
+  "bin": {"electron-testrunner": "electron-testrunner.sh"},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/solsort/electron-testrunner.git"
@@ -13,7 +14,7 @@
     "url": "https://github.com/solsort/electron-testrunner/issues"
   },
   "homepage": "https://electron-testrunner.solsort.com/",
-  "devDependencies": {
+  "dependencies": {
     "electron": "^1.6.3"
   }
 }
