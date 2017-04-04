@@ -15,7 +15,7 @@
 
     traverse(module);
     function traverse(o) {
-      if(visited.get(o)) {
+      if(!o || visited.get(o)) {
         return;
       }
       visited.set(o, true);
